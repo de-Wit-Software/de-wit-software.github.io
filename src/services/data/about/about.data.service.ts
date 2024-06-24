@@ -4,7 +4,7 @@ I view software, frameworks, libraries, and packages as versatile tools to solve
 <br/>
 I love tackling complex technical problems. While web development is my primary expertise and focus, I also have a strong passion for embedded software, hardware & PCB design, CAD, 3D printing, and now my latest educational challenge; conversion/DIY electric vehicles.
 <br/>
-My journey with technical challenges started at a young age, creating simple video games for my Nintendo DS. Now, after {time} doing software development professionally, my passion for innovation and problem-solving remains as strong as ever. As showcased in my projects section in this portfolio, I still dedicate much of my free time to intricate and technical passion projects.
+My journey with technical challenges started at a young age, creating simple video games for my Nintendo DS. Now, after <span id="time">time</span> doing software development professionally, my passion for innovation and problem-solving remains as strong as ever. As showcased in my projects section in this portfolio, I still dedicate much of my free time to intricate and technical passion projects.
 <br/>
 This is the passion and energy that I bring to you and your team.
 <br/>
@@ -16,7 +16,7 @@ Ik zie software, frameworks, libraries en packages als veelzijdige hulpmiddelen 
 <br/>
 Ik hou van het aanpakken van complexe technische problemen. Web development is mijn primaire expertise en focus, echter heb ik ook een passie voor embedded software, hardware & PCB-ontwerp, CAD, 3D-printen en nu mijn meest recente leerzame uitdaging; ombouw/zelfbouw van elektrische voertuigen.
 <br/>
-Mijn ervaring met technische uitdagingen begon op een jonge leeftijd, toen ik simpele videogames maakte voor mijn Nintendo DS. Nu, na ik {time} professioneel met softwareontwikkeling bezig ben geweest, is mijn passie voor innovatie en en het oplossen van technische problemen nog steeds even sterk. Zoals te zien is in mijn projectensectie van deze portfolio, besteed ik nog steeds veel van mijn vrije tijd aan complexe en technische passieprojecten.
+Mijn ervaring met technische uitdagingen begon op een jonge leeftijd, toen ik simpele videogames maakte voor mijn Nintendo DS. Nu, na ik <span id="time">time</span> professioneel met softwareontwikkeling bezig ben geweest, is mijn passie voor innovatie en en het oplossen van technische problemen nog steeds even sterk. Zoals te zien is in mijn projectensectie van deze portfolio, besteed ik nog steeds veel van mijn vrije tijd aan complexe en technische passieprojecten.
 <br/>
 Dit is de passie en energie die ik meebreng naar jou en jouw team.
 <br/>
@@ -28,3 +28,4 @@ export default class AboutDataService {
     return language === 'en' ? ABOUT_ME_EN : ABOUT_ME_NL;
   }
 }
+
