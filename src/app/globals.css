@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+a {
+  color: #CC7E85;
+}
