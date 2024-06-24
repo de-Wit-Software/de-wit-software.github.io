@@ -2,6 +2,7 @@
 
 import { Props } from '@/app/context';
 import About from '@/components/features/about/about.feature.component';
+import AboutClient from '@/components/features/about/about_client.component';
 import Contact from '@/components/features/contact/contact.feature.component';
 import Projects from '@/components/features/projects/projects.feature.component';
 import Skills from '@/components/features/skills/skills.feature.component';
@@ -28,6 +29,7 @@ export default function Export(props: {
         </div>
       </div>
       <About appState={props.props.appState} className="mb-36"></About>
+      <AboutClient appState={props.props.appState}></AboutClient>
       <div className="text-2xl">{props.props.appState.labels.menu.contact}</div>
       <Contact appState={props.props.appState} className="mb-16"></Contact>
       <div className="text-2xl">{props.props.appState.labels.menu.skills}</div>
