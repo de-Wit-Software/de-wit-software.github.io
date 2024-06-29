@@ -48,6 +48,18 @@ _As a friendly, hard working and authentic person, next to his skill, he is a gr
         url: 'https://www.linkedin.com/in/niekdewit/details/recommendations/',
         date: new Date('2024-06-18T00:00:00.000Z'),
       },
+      {
+        description: `_"I had the pleasure of working with Niek for 1.5 years in an agile software development team, where he consistently demonstrated his expertise as a full-stack developer. Niek is an enthusiastic and curious individual who dives head-first into unknown territory, mastering new technologies and solving complex problems with ease._  
+<br/>
+_He is an excellent team player, always open to discussing complex issues and minor details, such as code styling, ensuring the best practices are followed. I have witnessed his remarkable growth from a heavy medior to a senior developer. In his senior role, Niek has shown exceptional leadership skills, capable of taking the lead, coaching team members, and sharing his extensive knowledge._  
+<br/>
+_His dependability and ability to handle any task thrown his way make him a valuable asset to any team. It has been a privilege to work alongside Niek, and I am confident that he will continue to excel in his career."_`,
+        type: 'linkedin',
+        name: 'Ferdi Sancak',
+        position: language === 'en' ? 'Worked on the same team' : 'Samengewerkt in hetzelfde team',
+        url: 'https://www.linkedin.com/in/niekdewit/details/recommendations/',
+        date: new Date('2024-06-25T00:00:00.000Z'),
+      },
     ]
   }
 }

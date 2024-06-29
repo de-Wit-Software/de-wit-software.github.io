@@ -19,19 +19,25 @@ export function getTimeDiffString(
   },
   short: boolean = false
 ): string {
-  
-  const diff = end.getTime() - start.getTime();
-  let seconds = Math.floor(diff / 1000),
-  minutes = Math.floor(seconds / 60),
-  hours   = Math.floor(minutes / 60),
-  days    = Math.floor(hours / 24),
-  months  = Math.floor(days / 30),
-  years   = Math.floor(days / 365);
 
-  minutes %= 60;
-  hours %= 24;
-  days %= 30;
-  months %= 12;
+  const minuteMillis = 1000 * 60;
+  const hourMillis = minuteMillis * 60;
+  const dayMillis = hourMillis * 24;
+  const yearMillis = dayMillis * 365.2422;
+  const monthMillis = yearMillis / 12;
+
+  let remainingMillis = end.getTime() - start.getTime();
+  const years = Math.floor(remainingMillis / yearMillis);
+  remainingMillis -= years * yearMillis;
+  let months = Math.floor(remainingMillis / monthMillis);
+  remainingMillis -= months * monthMillis;
+  const days = Math.floor(remainingMillis / dayMillis);
+  remainingMillis -= days * dayMillis;
+  const hours = Math.floor(remainingMillis / hourMillis);
+  remainingMillis -= hours * hourMillis;
+  const minutes = Math.floor(remainingMillis / minuteMillis);
+  remainingMillis -= minutes * minuteMillis;
+
   if(!short) {
     return `${years} ${years === 1 ? labels.time.year : labels.time.years}, ${months} ${months === 1 ? labels.time.month : labels.time.months}, ${days} ${days === 1 ? labels.time.day : labels.time.days}, ${hours} ${hours === 1 ? labels.time.hour : labels.time.hours} ${labels.and} ${minutes} ${minutes === 1 ? labels.time.minute : labels.time.minutes}`
   } else {
@@ -94,3 +100,4 @@ export function getTimeString(
     return `${label} ${date.getDate()}, ${date.getFullYear()}`
   }
 }
+

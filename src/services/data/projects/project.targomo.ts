@@ -39,7 +39,7 @@ export function Targomo(language: 'en' | 'nl'): Project {
         name: 'Lilian Renee Günzel',
         position: language === 'en' ? 'Worked on the same team' : 'Samengewerkt in hetzelfde team',
         url: 'https://www.linkedin.com/in/niekdewit/details/recommendations/',
-        date: new Date('2022-11-22T00:00:00.000Z'),
+        date: new Date('2019-11-22T00:00:00.000Z'),
       },
     ]
   }
