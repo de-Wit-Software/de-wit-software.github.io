@@ -15,9 +15,9 @@ export default class ContactDataService {
     return [
       {
         label: _labels.email,
-        value: 'info@dewitsoftware.nl',
+        value: 'niek@dewitsoftware.nl',
         display: 'email',
-        displayData: 'info@dewitsoftware.nl'
+        displayData: 'niek@dewitsoftware.nl'
       },
       {
         label: _labels.github,
