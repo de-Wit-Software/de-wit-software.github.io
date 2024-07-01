@@ -14,7 +14,8 @@ const config: Config = {
         'portfolio-text': '#0C090D'
       },
       backgroundImage: {
-        'portfolio-specs': "linear-gradient(rgba(247,243,227,0.3), rgba(247,243,227,0.3)), url('/specs.svg')"
+        'portfolio-specs': "linear-gradient(rgba(247,243,227, 0.2), rgba(247,243,227,0.2)), url('/specs.svg')"
+        
       }
     },
   },

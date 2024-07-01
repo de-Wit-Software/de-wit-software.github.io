@@ -19,10 +19,10 @@ export default function BaseLayout({children, appState}: {children: ReactNode, a
   return (
     <div className="h-full w-full border-0 sm:border-[32px] border-portfolio-bg overflow-hidden flex bg-portfolio-bg relative">
 
-      <Image src={`/corner.svg`} alt="background image" width="800" height="800" className="absolute flex justify-end z-0 bottom-0 flex overflow-hidden left-[670px] 2xl:left-auto right-auto 2xl:right-0"/>
+      <Image src={`/corner.svg`} alt="background image" width="800" height="800" className="absolute flex opacity-50 justify-end z-0 bottom-0 flex overflow-hidden left-[670px] 2xl:left-auto right-auto 2xl:right-0"/>
 
       <div className="p-4 sm:p-8 w-full flex flex-col items-center border-portfolio-accent border relative bg-portfolio-specs overflow-y-auto scroll-smooth scrollbar scrollbar-thumb-portfolio-accent scrollbar-track-portfolio-bg">
-        <div className="max-w-7xl w-full flex flex-col 2xl:mr-16 relative">
+        <div className="max-w-7xl w-full flex flex-col 2xl:mr-16 relative z-20">
           <LanguageSwitch className="md:absolute mb-8 md:mb-0 right-0" path={path}></LanguageSwitch>
 
           <div className="flex flex-row items-center">
@@ -59,6 +59,7 @@ export default function BaseLayout({children, appState}: {children: ReactNode, a
           </div>
         </div>
       </div>
+
     </div>
   )
 }
