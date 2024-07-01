@@ -17,7 +17,7 @@ export default function BaseLayout({children, appState}: {children: ReactNode, a
     downloads: `/${language}/downloads`,
   }
   return (
-    <div className="h-full w-full border-0 sm:border-[32px] border-portfolio-bg overflow-hidden flex bg-portfolio-bg relative">
+    <div className="h-full w-full border-0 sm:border-[32px] border-portfolio-bg overflow-hidden flex bg-portfolio-bg relative" lang={appState.language}>
 
       <Image src={`/corner.svg`} alt="background image" width="800" height="800" className="absolute flex opacity-50 justify-end z-0 bottom-0 flex overflow-hidden left-[670px] 2xl:left-auto right-auto 2xl:right-0"/>
 
@@ -28,7 +28,7 @@ export default function BaseLayout({children, appState}: {children: ReactNode, a
           <div className="flex flex-row items-center">
             <div className="lg:w-44">
               <div className="max-w-28 lg:max-w-36 hidden sm:block rounded-full border-portfolio-accent border overflow-hidden">
-                <Image unoptimized src={`/profile.jpeg`} alt="profile image" width="200" height="200" className="object-contain"/>
+                <Image unoptimized src={`/profile.webp`} alt="profile image" width="200" height="200" className="object-contain"/>
               </div>
             </div>
             

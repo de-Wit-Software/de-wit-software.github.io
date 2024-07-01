@@ -15,7 +15,8 @@ export type AppState = {
   expertiseSkills: Skill[],
   personalSkills: Skill[],
   contactInfo: ContactInfoItem[],
-  projects: Project[]
+  projects: Project[],
+  language: 'en' | 'nl'
 }
 
 export default function CreateAppState(
@@ -29,6 +30,7 @@ export default function CreateAppState(
 ) {
   const labels = _labelsDataService.getLabels(_language);
   return {
+    language: _language,
     aboutMeText: _aboutDataService.getAboutMeText(_language),
     labels: labels,
     githubSource: _externalUrlsService.getGithubSource(),

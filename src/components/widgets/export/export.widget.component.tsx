@@ -19,7 +19,7 @@ export default function Export(props: {
       <div className="flex flex-row items-center mb-8">
         <div className="lg:w-44">
           <div className="max-w-28 lg:max-w-36 hidden sm:block rounded-full border-portfolio-accent border overflow-hidden">
-            <Image unoptimized src={`/profile.jpeg`} alt="profile image" width="200" height="200" className="object-contain"/>
+            <Image unoptimized src={`/profile.webp`} alt="profile image" width="200" height="200" className="object-contain"/>
           </div>
         </div>
         
