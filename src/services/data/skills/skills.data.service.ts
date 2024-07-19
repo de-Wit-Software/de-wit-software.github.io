@@ -38,7 +38,8 @@ export enum Skill {
   CURA = 'Ultimaker Cura',
   HUGO = 'HUGO',
   ANDROID = 'Android Native',
-  ASP_NET = 'ASP.net'
+  ASP_NET = 'ASP.net',
+  SPRING_BOOT = 'Spring Boot'
 }
 
 const SKILLS_EXPERTISE = [
@@ -66,7 +67,6 @@ const SKILLS_EXPERTISE = [
   Skill.TYPEORM,
   Skill.TS,
   Skill.UNITY,
-  Skill.CURA,
   Skill.HUGO,
 ]
 
@@ -79,11 +79,13 @@ const SKILLS_PERSONAL = [
   Skill.KICAD,
   Skill.OPENSCAD,
   Skill.REACT_NATIVE,
+  Skill.SPRING_BOOT,
   Skill.ASP_NET,
   Skill.ANDROID,
   Skill.BLENDER,
   Skill.FUSION,
   Skill.NEXT,
+  Skill.CURA,
 ]
 
 const SKILLS_EDUCATION_EN = `**Education**  

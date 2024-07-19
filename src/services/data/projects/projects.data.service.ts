@@ -3,6 +3,7 @@ import { Alliander } from "./project.alliander";
 import { Arcadable } from "./project.arcadable";
 import { BricksAndGoggles } from "./project.bricks_and_goggles";
 import { BuddyBall } from "./project.buddyball";
+import { ExpressMe } from "./project.express_me";
 import { Meditop } from "./project.meditop";
 import { Motorcycle } from "./project.motorcycle";
 import { SocialBrothers } from "./project.social_brothers";
@@ -35,6 +36,7 @@ export type Project = {
 export default class ProjectsDataService {
   public getProjects(language: 'en' | 'nl'): Project[] {
     return [
+      ExpressMe(language),
       Motorcycle(language),
       Alliander(language),
       BuddyBall(language),
@@ -43,7 +45,7 @@ export default class ProjectsDataService {
       Targomo(language),
       SocialBrothers(language),
       BricksAndGoggles(language),
-      Meditop(language)
+      Meditop(language),
     ];
   }
 }
