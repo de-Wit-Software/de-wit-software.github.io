@@ -43,12 +43,12 @@ export default class ContactDataService {
       },
       {
         label: _labels.taxNumber,
-        value: '...',
+        value: 'NL005090024B47',
         display: 'plain'
       },
       {
         label: _labels.kvkNumber,
-        value: '...',
+        value: '94525447',
         display: 'plain'
       },
     ];
