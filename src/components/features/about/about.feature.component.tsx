@@ -13,7 +13,7 @@ export default function About(props: {
 
   return <div>
     <div className={className}><MDXRemote source={aboutMeTextParts[0]} /></div>
-    <div className="flex justify-center my-8"><Link id='CTA' className="text-2xl min-w-[170px] leading-10" newTab={false} selected={false} href='' text={ctaText}></Link></div>
+    <div className="flex justify-center my-8"><Link id='CTA' className="text-2xl text-center min-w-[170px] h-min" newTab={false} selected={false} href='' text={ctaText}></Link></div>
     <div className={className}><MDXRemote source={aboutMeTextParts[1]} /></div>
   </div>
 }

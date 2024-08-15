@@ -49,7 +49,7 @@ export default function DownloadExportControls(props: {
   }
 
   return <div>
-    <Button className="mb-4" text={props.labels.downloads.print} icon={FaPrint} cb={printCb}></Button>
+    <Button className="hidden mb-4" text={props.labels.downloads.print} icon={FaPrint} cb={printCb}></Button>
     <Button className="hidden mb-4" text={props.labels.downloads.download} icon={FaFilePdf} cb={downloadCb}></Button>
     <Button text={props.labels.downloads.source} icon={FaGithub} href={props.githubSource}></Button>
   </div>
