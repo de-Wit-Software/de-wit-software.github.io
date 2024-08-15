@@ -40,18 +40,18 @@ export default function BaseLayout({children, appState}: {children: ReactNode, a
         
           <div className="mt-8 flex flex-col lg:flex-row">
             <div className="flex flex-col hidden lg:block w-44 min-w-44">
-              <Link className="text-2xl leading-10" newTab={false} dot={true} selected={path.includes('/projects')} href={navigation.projects} text={appState.labels.menu.projects}></Link>
-              <Link className="text-2xl leading-10" newTab={false} dot={true} selected={path.includes('/about')} href={navigation.about} text={appState.labels.menu.about}></Link>
-              <Link className="text-2xl leading-10" newTab={false} dot={true} selected={path.includes('/contact')} href={navigation.contact} text={appState.labels.menu.contact}></Link>
-              <Link className="text-2xl leading-10" newTab={false} dot={true} selected={path.includes('/skills')} href={navigation.skills} text={appState.labels.menu.skills}></Link>
-              <Link className="text-2xl leading-10" newTab={false} dot={true} selected={path.includes('/downloads')} href={navigation.downloads} text={appState.labels.menu.downloads}></Link>
+              <Link className="text-2xl min-w-[170px] leading-10 mb-4" newTab={false} selected={path.includes('/projects')} href={navigation.projects} text={appState.labels.menu.projects}></Link>
+              <Link className="text-2xl min-w-[170px] leading-10 mb-4" newTab={false} selected={path.includes('/about')} href={navigation.about} text={appState.labels.menu.about}></Link>
+              <Link className="text-2xl min-w-[170px] leading-10 mb-4" newTab={false} selected={path.includes('/contact')} href={navigation.contact} text={appState.labels.menu.contact}></Link>
+              <Link className="text-2xl min-w-[170px] leading-10 mb-4" newTab={false} selected={path.includes('/skills')} href={navigation.skills} text={appState.labels.menu.skills}></Link>
+              <Link className="text-2xl min-w-[170px] leading-10" newTab={false} selected={path.includes('/downloads')} href={navigation.downloads} text={appState.labels.menu.downloads}></Link>
             </div>
             <div className="flex flex-row block lg:hidden mb-8 flex-wrap">
-              <Link className="text-2xl leading-10 mr-6" newTab={false} dot={false} selected={path.includes('/projects')} href={navigation.projects} text={appState.labels.menu.projects}></Link>
-              <Link className="text-2xl leading-10 mr-6" newTab={false} dot={false} selected={path.includes('/about')} href={navigation.about} text={appState.labels.menu.about}></Link>
-              <Link className="text-2xl leading-10 mr-6" newTab={false} dot={false} selected={path.includes('/contact')} href={navigation.contact} text={appState.labels.menu.contact}></Link>
-              <Link className="text-2xl leading-10 mr-6" newTab={false} dot={false} selected={path.includes('/skills')} href={navigation.skills} text={appState.labels.menu.skills}></Link>
-              <Link className="text-2xl leading-10" newTab={false} dot={false} selected={path.includes('/export')} href={navigation.downloads} text={appState.labels.menu.downloads}></Link>
+              <Link className="text-2xl min-w-[170px] leading-10 mb-4 mr-6" newTab={false} selected={path.includes('/projects')} href={navigation.projects} text={appState.labels.menu.projects}></Link>
+              <Link className="text-2xl min-w-[170px] leading-10 mb-4 mr-6" newTab={false} selected={path.includes('/about')} href={navigation.about} text={appState.labels.menu.about}></Link>
+              <Link className="text-2xl min-w-[170px] leading-10 mb-4 mr-6" newTab={false} selected={path.includes('/contact')} href={navigation.contact} text={appState.labels.menu.contact}></Link>
+              <Link className="text-2xl min-w-[170px] leading-10 mb-4 mr-6" newTab={false} selected={path.includes('/skills')} href={navigation.skills} text={appState.labels.menu.skills}></Link>
+              <Link className="text-2xl min-w-[170px] leading-10 mb-4" newTab={false} selected={path.includes('/export')} href={navigation.downloads} text={appState.labels.menu.downloads}></Link>
             </div>
             <div className="lg:ml-16 max-w-5xl w-full">
               {children}

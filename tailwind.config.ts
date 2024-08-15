@@ -11,6 +11,7 @@ const config: Config = {
       colors: {
         'portfolio-bg': '#F7F3E3',
         'portfolio-accent': '#CC7E85',
+        'portfolio-accent-darker': '#a3646a',
         'portfolio-text': '#0C090D'
       },
       backgroundImage: {

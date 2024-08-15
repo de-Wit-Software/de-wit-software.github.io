@@ -7,6 +7,7 @@ import SkillsDataService, { Skill } from "@/services/data/skills/skills.data.ser
 
 export type AppState = {
   aboutMeText: string
+  ctaText: string
   labels: Labels
   githubSource: string
   skillsEducationText: string,
@@ -32,6 +33,7 @@ export default function CreateAppState(
   return {
     language: _language,
     aboutMeText: _aboutDataService.getAboutMeText(_language),
+    ctaText: _aboutDataService.getCTAText(_language),
     labels: labels,
     githubSource: _externalUrlsService.getGithubSource(),
     contactInfo: _contactDataService.getContactInfo(_language, labels.contact),

@@ -48,7 +48,7 @@ function LinkedInItem(props: {
   labels: Labels
 }) {
   return <div className="flex flex-col">
-    <Link dot={false} selected={false} newTab={true} href={props.item.url || ''} text={props.labels.projects.recommendation.linkedin}></Link>
+    <Link selected={false} newTab={true} href={props.item.url || ''} text={props.labels.projects.recommendation.linkedin}></Link>
     <div>{props.item.position}</div>
     <div>{getTimeString(props.item.date, props.labels, true)}</div>
   </div>

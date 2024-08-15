@@ -16,7 +16,7 @@ export function ExpressMe(language: 'en' | 'nl'): Project {
     function: '',
     start: new Date('2024-07-01T00:00:00.000Z'),
     end: new Date(),
-    type: 'personal_project',
+    type: 'work',
     commitment: 'part_time',
     skills: [
       Skill.ANDROID, Skill.JAVA, Skill.REACT_NATIVE, Skill.AWS, Skill.TS, Skill.RXJS, Skill.POSTGRES, Skill.GITHUB_ACTIONS, Skill.SPRING_BOOT

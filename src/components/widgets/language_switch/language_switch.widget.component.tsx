@@ -13,9 +13,9 @@ export default function LanguageSwitch(props: {
 
   return (
     <div className={baseClass}>
-      <Link className="text-2xl leading-10" newTab={false} dot={false} selected={language === 'en'} href={switchNlUrl} text="EN"></Link>
+      <Link className="text-2xl leading-10" newTab={false} textStyling={true} selected={language === 'en'} href={switchNlUrl} text="EN"></Link>
       <div className="text-2xl font-bold mx-2">/</div>
-      <Link className="text-2xl leading-10" newTab={false} dot={false} selected={language === 'nl'} href={switchEnUrl} text="NL"></Link>
+      <Link className="text-2xl leading-10" newTab={false} textStyling={true} selected={language === 'nl'} href={switchEnUrl} text="NL"></Link>
     </div>
   ) 
 }

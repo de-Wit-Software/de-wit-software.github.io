@@ -86,7 +86,7 @@ export type Labels = {
 const LABELS_EN: Labels = {
   menu: {
     projects: 'Projects',
-    about: 'About',
+    about: 'About me',
     contact: 'Contact',
     skills: 'Skills',
     downloads: 'Downloads'
@@ -162,9 +162,9 @@ const LABELS_EN: Labels = {
 const LABELS_NL: Labels = {
   menu: {
     projects: 'Projecten',
-    about: 'Over',
+    about: 'Over mij',
     contact: 'Contact',
-    skills: 'Vaardigheden',
+    skills: 'Skills',
     downloads: 'Downloads'
   },
   header: {
