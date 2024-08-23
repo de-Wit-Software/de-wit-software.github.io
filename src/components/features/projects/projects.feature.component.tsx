@@ -9,13 +9,25 @@ import { FaLink } from "react-icons/fa6";
 
 export default function Projects(props: {
   appState: AppState,
-  className?: string
+  className?: string,
+  resume?: boolean
 }) {
-  const className = `w-full mb-48 ${props.className}`
+  const className = `w-full mb-48 ${props.className || ''}`
+  const resumeMarginBottom = 'mb-96';
+  const projects = props.appState.projects
+    .sort((a, b) => b.start.getTime() - a.start.getTime())
+    .filter(project => {
+      if(props.resume) {
+        return project.type === 'work';
+      } else {
+        return true;
+      }
+    });
+  
   return <div className={className}>
 
 
-    {props.appState.projects.sort((a, b) => b.start.getTime() - a.start.getTime()).map((project, i) => (
+    {(props.resume ? [] : projects).map((project, i) => (
       <div className="mb-2 flex flex-col sm:flex-row" key={i}>
         <Link className="min-w-72 flex flex-row items-center" href={`#${project.company}`}><FaLink className="mr-2"/>{project.company}</Link>
         <div className="flex-row min-w-60 hidden xl:flex">
@@ -26,12 +38,12 @@ export default function Projects(props: {
         </div>
       </div>
     ))}
-    <div className="flex flex-row justify-center my-16">
+    <div className={props.resume ? "hidden" : "flex flex-row justify-center my-16"}>
       <FaAnglesDown className="text-portfolio-text" size="50"></FaAnglesDown>
     </div>
-    {props.appState.projects.sort((a, b) => b.start.getTime() - a.start.getTime()).map((project, i) => (
-      <div className="mb-16" key={i}>
-        <Project project={project} labels={props.appState.labels}></Project>
+    {projects.map((project, i) => (
+      <div className={(props.resume ? (i === 1 ? resumeMarginBottom : 'mb-6 ') : "mb-16 ") + (props.resume && i === 2 ? 'mt-8' : '')} key={i}>
+        <Project project={project} resume={props.resume} labels={props.appState.labels}></Project>
       </div>
     ))}
   </div>

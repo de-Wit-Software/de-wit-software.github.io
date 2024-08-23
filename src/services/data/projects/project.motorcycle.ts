@@ -22,6 +22,7 @@ export function Motorcycle(language: 'en' | 'nl'): Project {
       Skill.CURA, Skill.ARDUINO, Skill.OPENSCAD, Skill.KICAD
     ],
     description: language === 'en' ? DESCRIPTION_EN : DESCRIPTION_NL,
+    shortDescription: language === 'en' ? DESCRIPTION_EN : DESCRIPTION_NL,
     recommendations: []
   }
 }

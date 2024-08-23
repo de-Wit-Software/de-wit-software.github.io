@@ -12,6 +12,9 @@ In de loop van de tijd transformeerde dit systeem in een platform waar zorgprofe
 Tijdens mijn laatste periode bij SyncVR heb ik het grootste deel van mijn tijd besteed aan het refactoren van de architectuur van het platform om een overstap van een NoSQL document database (Firestore) naar een relationele database (MySQL) mogelijk te maken. Met alle hindernissen die je je kunt voorstellen bij een dergelijke opdracht. Ik nam de verantwoordelijkheid op me om te leren hoe ik een mooie GraphQL-implementatie kon maken die deze complexe migratie kon faciliteren. Ik moet zeggen, ik ben hierdoor een echte GraphQL fanboy geworden.  
 In de loop der jaren bij SyncVR heb ik nauw samengewerkt met business developers, klanten, ontwerpers en andere ontwikkelaars om functionele en technische eisen voor het platform te specificeren. Ik heb ook verschillende studenten begeleid om ervoor te zorgen dat hun VR-toepassingen performant waren en binnen de gestelde deadline werden geleverd.`;
 
+const SHORT_DESCRIPTION_EN = `At SyncVR, I was the lead web developer, responsible for developing and maintaining a custom platform with an Angular front-end and Node.js/Express backend on Google Cloud. I led the platform’s evolution from an internal tool to a comprehensive system for remote device management and app store features, eventually refactoring it to migrate from Firestore to MySQL, using a GraphQL implementation I developed. I also collaborated with stakeholders and mentored students on VR applications.`;
+const SHORT_DESCRIPTION_NL = `Bij SyncVR was ik de lead web-developer, verantwoordelijk voor het ontwikkelen en onderhouden van een op maat gemaakt platform met een Angular front-end en Node.js/Express backend op Google Cloud. Ik leidde de evolutie van het platform van een intern hulpmiddel naar een systeem voor remote device management en app store functionaliteiten, en refactoriseerde het om van Firestore naar MySQL te migreren, met een GraphQL-implementatie die ik ontwikkelde. Daarnaast werkte ik samen met stakeholders en begeleidde ik studenten bij hun VR-toepassingen.`;
+
 export function SyncVRMedical(language: 'en' | 'nl'): Project {
   return {
     company: 'SyncVR Medical',
@@ -26,6 +29,7 @@ export function SyncVRMedical(language: 'en' | 'nl'): Project {
       Skill.GCP, Skill.CLOUDFLARE, Skill.MYSQL, Skill.NOSQL, Skill.GRAPHQL, Skill.GITHUB_ACTIONS, Skill.ANGULAR, Skill.RXJS, Skill.NODE, Skill.EXPRESS, Skill.TS, Skill.JS, Skill.UNITY, Skill.C_SHARP
     ],
     description: language === 'en' ? DESCRIPTION_EN : DESCRIPTION_NL,
+    shortDescription: language === 'en' ? SHORT_DESCRIPTION_EN : SHORT_DESCRIPTION_NL,
     recommendations: [
       {
         description: `_"I really enjoyed working intensively with Niek for almost seven months. Niek is a highly knowledgeable, solution focused and outside-the-box creative thinker and a very productive software developer. In his communication he's extremely honest about estimations, his skills and his expectations which makes him very reliable to work with. He contributed in all kinds of ways to our startup during his years with us which makes it sad to see him leave. Besides being a high potential young professional, he's also very surprising in his private projects (ask him about this!) which demonstrates his passion for using technology in a fun and functional way. An authentic human being whose smile in the daily standup I will miss!"_`,

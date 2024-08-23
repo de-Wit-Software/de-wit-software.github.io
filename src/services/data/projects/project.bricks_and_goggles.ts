@@ -20,6 +20,7 @@ export function BricksAndGoggles(language: 'en' | 'nl'): Project {
       Skill.UNITY, Skill.C_SHARP, Skill.BLENDER
     ],
     description: language === 'en' ? DESCRIPTION_EN : DESCRIPTION_NL,
+    shortDescription: language === 'en' ? DESCRIPTION_EN : DESCRIPTION_NL,
     recommendations: []
   }
 }

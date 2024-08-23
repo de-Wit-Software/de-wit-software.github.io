@@ -30,7 +30,8 @@ export type Project = {
   remote?: boolean,
   skills: Skill[],
   description: string,
-  recommendations: Recommendation[]
+  shortDescription: string,
+  recommendations: Recommendation[],
 }
 
 export default class ProjectsDataService {

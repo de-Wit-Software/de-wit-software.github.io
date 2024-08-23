@@ -10,6 +10,11 @@ This is the passion and energy that I bring to you and your team.
 <br/>
 _~ Niek de Wit_`;
 
+const ABOUT_ME_SHORT_EN = `I am a versatile full-stack web developer with a pragmatic, solution-oriented approach. While web development is my primary expertise, I also have a strong passion for embedded software, hardware design, and innovative projects like DIY electric vehicles. My extensive experience and enduring passion for tackling complex technical challenges drive my commitment to delivering effective solutions for you and your team.  
+<br/>
+For more details on the projects described here and other (personal) projects, [visit my website!](https://dewitsoftware.nl/)
+`;
+
 const CTA_TEXT_EN = `Check out the projects I worked on!`;
 
 const ABOUT_ME_NL = `**Ik ben een pragmatische, oplossingsgerichte full-stack web developer.**  
@@ -24,15 +29,30 @@ Dit is de passie en energie die ik meebreng naar jou en jouw team.
 <br/>
 _~ Niek de Wit_`;
 
+const ABOUT_ME_SHORT_NL = `Ik ben een veelzijdige full-stack web developer met een pragmatische, oplossingsgerichte aanpak. Hoewel web development mijn primaire expertise is, heb ik ook een grote passie voor embedded software, hardwareontwerp en innovatieve projecten zoals zelfbouw elektrische voertuigen. Mijn uitgebreide ervaring en blijvende passie voor het oplossen van complexe technische uitdagingen drijven mijn toewijding om effectieve oplossingen te leveren voor jou en jouw team.  
+<br/>
+Voor meer details over de hier beschreven projecten en andere (persoonlijke) projecten, [bezoek mijn website!](https://dewitsoftware.nl/)
+`;
+
 const CTA_TEXT_NL = `Bekijk de projecten waar ik aan heb gewerkt!`;
+const RESUME_TIME_EN = `over 7 years of`;
+const RESUME_TIME_NL = `meer dan 7 jaar`;
 
 export default class AboutDataService {
   public getAboutMeText(language: 'en' | 'nl') {
     return language === 'en' ? ABOUT_ME_EN : ABOUT_ME_NL;
   }
 
+  public getShortAboutMeText(language: 'en' | 'nl') {
+    return language === 'en' ? ABOUT_ME_SHORT_EN : ABOUT_ME_SHORT_NL;
+  }
+
   public getCTAText(language: 'en' | 'nl') {
     return language === 'en' ? CTA_TEXT_EN : CTA_TEXT_NL;
+  }
+
+  public getResumeTimeText(language: 'en' | 'nl') {
+    return language === 'en' ? RESUME_TIME_EN : RESUME_TIME_NL;
   }
 }
 

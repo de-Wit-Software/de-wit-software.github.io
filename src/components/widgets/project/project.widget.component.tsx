@@ -7,7 +7,8 @@ import ProjectDescription from "../project_description/project_description.widge
 
 export default function ProjectItem(props: {
   project: Project,
-  labels: Labels
+  labels: Labels,
+  resume?: boolean
 }) {
   const workTime = getTimeDiffString(props.project.start, props.project.end, props.labels, true);
 
@@ -22,16 +23,18 @@ export default function ProjectItem(props: {
           </div>
           <div className="grow h-px bg-portfolio-text mt-3 mx-8 hidden md:block"></div>
           <div className="font-bold">
-            {getTimeString(props.project.start, props.labels)} - {getTimeString(props.project.end, props.labels)}; {workTime}
+            {getTimeString(props.project.start, props.labels)} - {getTimeString(props.project.end, props.labels)}; {(props.resume && getTimeString(props.project.end, props.labels).includes(props.labels.date.now)) ? '' : workTime}
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-start xl:items-end mb-8 opacity-40	">
-        <div className="flex flex-row">
-          <div className="mr-2">{props.project.type === 'work' ? props.labels.projects.type.work : props.labels.projects.type.personalProject}</div>
-          <div>({props.project.commitment === 'full_time' ? props.labels.projects.commitment.fullTime : (props.project.commitment === 'on_call' ? props.labels.projects.commitment.onCall : props.labels.projects.commitment.partTime)})</div>
-        </div>
-        {props.project.type === 'work' ? (
+      <div className={(props.resume ? "mb-2 " : "mb-8 ") + "flex flex-col items-start xl:items-end opacity-40	"}>
+        {!props.resume ? (
+          <div className="flex flex-row">
+            <div className="mr-2">{props.project.type === 'work' ? props.labels.projects.type.work : props.labels.projects.type.personalProject}</div>
+            <div>({props.project.commitment === 'full_time' ? props.labels.projects.commitment.fullTime : (props.project.commitment === 'on_call' ? props.labels.projects.commitment.onCall : props.labels.projects.commitment.partTime)})</div>
+          </div>
+        ) : (<></>)}
+        {!props.resume && props.project.type === 'work' ? (
           <div className="flex flex-row">
             <div className="mr-2">{props.project.location}</div>
             <div>({props.project.remote ? props.labels.projects.remote.remote : props.labels.projects.remote.onLocation})</div>
@@ -45,12 +48,12 @@ export default function ProjectItem(props: {
 
       </div>
       <div className="flex flex-col">
-        {props.project.recommendations.map((item, i) => 
+        {(props.resume ? [] : props.project.recommendations).map((item, i) => 
           <RecommendationItem key={i} recommendation={item} labels={props.labels}></RecommendationItem>
         )}
       </div>
       <div className="text-lg sm:text-justify whitespace-pre-wrap">
-        <ProjectDescription project={props.project} labels={props.labels}></ProjectDescription>
+        <ProjectDescription project={props.project} resume={props.resume} labels={props.labels}></ProjectDescription>
       </div>
     </div>
   )

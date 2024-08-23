@@ -21,6 +21,12 @@ Naast de gebruikelijke software feature implementaties, was een van de grootste 
 
 Ik heb nauw samengewerkt met de product owner, key-users, solution architects en andere ontwikkelaars om technische oplossingen en specifieke uitvoerbare actieplannen te vinden voor de ontwikkeling van nieuwe functionaliteiten en softwareoplossingen in het algemeen.`;
 
+const SHORT_DESCRIPTION_EN = `At Alliander, I worked as a full-stack developer, responsible for developing and maintaining a custom front-end (Angular) and backend (Node.js/NestJS/Postgres) for an application managing power grid issues. I led the migration of our deployment from Openshift to an AWS EKS cluster and guided the transition from a SAP HANA-based data architecture to an AWS-hosted architecture, collaborating closely with stakeholders to develop technical solutions.`;
+
+const SHORT_DESCRIPTION_NL = `Bij Alliander was ik als full-stack ontwikkelaar verantwoordelijk voor het ontwikkelen en onderhouden van een op maat gemaakte front-end (Angular) en back-end (Node.js/NestJS/Postgres) voor een applicatie die problemen in het elektriciteitsnet beheert. Ik leidde de migratie van Openshift naar een AWS EKS-cluster en begeleidde de overgang van een SAP HANA-gebaseerde data-architectuur naar een AWS-gehoste architectuur, in nauwe samenwerking met diverse stakeholders.`;
+
+
+
 export function Alliander(language: 'en' | 'nl'): Project {
   return {
     company: 'Alliander',
@@ -35,6 +41,7 @@ export function Alliander(language: 'en' | 'nl'): Project {
       Skill.ANGULAR, Skill.NESTJS, Skill.GITOPS, Skill.AWS, Skill.TS, Skill.TYPEORM, Skill.NODE, Skill.K8S, Skill.POSTGRES, Skill.RXJS, Skill.GITHUB_ACTIONS, Skill.MAPPING
     ],
     description: language === 'en' ? DESCRIPTION_EN : DESCRIPTION_NL,
+    shortDescription: language === 'en' ? SHORT_DESCRIPTION_EN : SHORT_DESCRIPTION_NL,
     recommendations: [
       {
         description: `_"I have worked together with Niek for one and a half year._  

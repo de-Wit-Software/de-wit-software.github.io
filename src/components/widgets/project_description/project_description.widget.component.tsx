@@ -5,8 +5,9 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 
 export default function ProjectDescription(props: {
   project: Project,
-  labels: Labels
+  labels: Labels,
+  resume?: boolean
 }) {
-  return <div className="text-lg sm:text-justify"><MDXRemote source={props.project.description} /></div>
+  return <div className={(props.resume ? "text-base" : "text-lg ") + " sm:text-justify"}><MDXRemote source={props.resume ? props.project.shortDescription : props.project.description} /></div>
 }
 

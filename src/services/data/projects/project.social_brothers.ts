@@ -20,6 +20,7 @@ export function SocialBrothers(language: 'en' | 'nl'): Project {
       Skill.UNITY, Skill.C_SHARP
     ],
     description: language === 'en' ? DESCRIPTION_EN : DESCRIPTION_NL,
+    shortDescription: language === 'en' ? DESCRIPTION_EN : DESCRIPTION_NL,
     recommendations: []
   }
 }

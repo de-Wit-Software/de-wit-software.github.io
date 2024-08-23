@@ -6,7 +6,8 @@ export default function Button(props: {
   text: string,
   cb?: () => void,
   href?: string,
-  className?: string
+  className?: string,
+  download?: string
 }) {
 
   if(props.cb) {
@@ -16,6 +17,11 @@ export default function Button(props: {
   }
   if(props.href) {
     return <a className={props.className ?? ''} href={props.href} target="_blank">
+      <BaseButton text={props.text} icon={props.icon}></BaseButton>
+    </a>
+  }
+  if(props.download) {
+    return <a className={props.className ?? ''} href={props.download} download>
       <BaseButton text={props.text} icon={props.icon}></BaseButton>
     </a>
   }

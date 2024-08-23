@@ -24,6 +24,7 @@ export function BuddyBall(language: 'en' | 'nl'): Project {
       Skill.UNITY, Skill.C_SHARP, Skill.BLENDER, Skill.FUSION
     ],
     description: language === 'en' ? DESCRIPTION_EN : DESCRIPTION_NL,
+    shortDescription: language === 'en' ? DESCRIPTION_EN : DESCRIPTION_NL,
     recommendations: []
   }
 }

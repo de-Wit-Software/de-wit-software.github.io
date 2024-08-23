@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && touch ./docs/.nojekyll && touch ./docs/CNAME && echo \"dewitsoftware.nl\" > ./docs/CNAME",
+    "build": "next build && touch ./docs/.nojekyll && touch ./docs/CNAME && echo \"dewitsoftware.nl\" > ./docs/CNAME && npx tsx src/generate-pdf.ts",
     "start": "next start",
     "lint": "next lint"
   },
@@ -25,7 +25,9 @@
     "eslint": "^8",
     "eslint-config-next": "14.2.4",
     "postcss": "^8",
+    "puppeteer": "^23.1.1",
     "tailwindcss": "^3.4.1",
+    "tsx": "^4.17.0",
     "typescript": "^5"
   }
 }

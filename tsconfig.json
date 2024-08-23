@@ -33,7 +33,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "docs/types/**/*.ts"
-  ],
+, "src/generate-pdf.ts"  ],
   "exclude": [
     "node_modules"
   ]

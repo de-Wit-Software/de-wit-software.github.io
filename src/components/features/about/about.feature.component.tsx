@@ -10,10 +10,10 @@ export default function About(props: {
   const className = `text-lg sm:text-justify ${props.className}`;
   const aboutMeTextParts = props.appState.aboutMeText.split('~~CTA~~');
   const ctaText = props.appState.ctaText;
-
+  const ctaStyling = `flex justify-center my-8`;
   return <div>
     <div className={className}><MDXRemote source={aboutMeTextParts[0]} /></div>
-    <div className="flex justify-center my-8"><Link id='CTA' className="text-2xl text-center min-w-[170px] h-min" newTab={false} selected={false} href='' text={ctaText}></Link></div>
+    <div className={ctaStyling}><Link id='CTA' className="text-2xl text-center min-w-[170px] h-min" newTab={false} selected={false} href='' text={ctaText}></Link></div>
     <div className={className}><MDXRemote source={aboutMeTextParts[1]} /></div>
   </div>
 }

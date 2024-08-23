@@ -1,7 +1,7 @@
 import { ContactInfoLabels } from "@/services/data/labels/labels.data.service";
 
-const ADDRESS_EN = 'Montfoort, Utrecht, Netherlands';
-const ADDRESS_NL = 'Montfoort, Utrecht, Nederland';
+const ADDRESS_EN = 'Montfoort, Netherlands';
+const ADDRESS_NL = 'Montfoort, Nederland';
 
 export type ContactInfoItem = {
   label: string,
@@ -27,7 +27,7 @@ export default class ContactDataService {
       },
       {
         label: _labels.linkedIn,
-        value: 'niekdewit',
+        value: 'linkedin.com/in/niekdewit/',
         display: 'href',
         displayData: 'https://www.linkedin.com/in/niekdewit/'
       },

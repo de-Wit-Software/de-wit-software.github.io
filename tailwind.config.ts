@@ -17,7 +17,7 @@ const config: Config = {
       backgroundImage: {
         'portfolio-specs': "linear-gradient(rgba(247,243,227, 0.2), rgba(247,243,227,0.2)), url('/specs.svg')"
         
-      }
+      },
     },
   },
   plugins: [

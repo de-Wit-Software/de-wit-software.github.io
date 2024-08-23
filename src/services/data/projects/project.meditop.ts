@@ -20,6 +20,7 @@ export function Meditop(language: 'en' | 'nl'): Project {
       Skill.JAVA, Skill.ASP_NET, Skill.ANDROID
     ],
     description: language === 'en' ? DESCRIPTION_EN : DESCRIPTION_NL,
+    shortDescription: language === 'en' ? DESCRIPTION_EN : DESCRIPTION_NL,
     recommendations: []
   }
 }
