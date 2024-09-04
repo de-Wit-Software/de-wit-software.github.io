@@ -42,7 +42,7 @@ export default function ProjectItem(props: {
         ) : (<></>)}
 
 
-        <div className="flex flex-row flex-wrap justify-start xl:justify-end	">{props.project.skills.sort().map((skill, i) => (
+        <div className="flex flex-row flex-wrap justify-start xl:justify-end text-xs">{props.project.skills.sort().map((skill, i) => (
           <div className="mr-4 ml-0 xl:ml-4 xl:mr-0" key={i}>{skill}{i !== props.project.skills.length - 1 ? ',' : ''}</div>
         ))}</div>
 

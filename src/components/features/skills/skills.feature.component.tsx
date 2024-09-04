@@ -12,7 +12,7 @@ export default function Skills(props: {
     <div className={(props.resume ? 'text-base basis-2/5 ' : 'text-lg ') + "sm:text-justify mb-8"}><MDXRemote source={props.appState.skillsEducationText} /></div>
     <div className="basis-3/5">
       <div className={(props.resume ? 'text-base ' : 'text-lg ') + "sm:text-justify"}><MDXRemote source={props.appState.skillsExpertiseText} /></div>
-      <div className="flex flex-row flex-wrap mb-8">
+      <div className="flex text-xs flex-row flex-wrap mb-8">
         {props.appState.expertiseSkills.map((skill, i) => (
           <div className="mr-3" key={i}>{`${skill}${i !== props.appState.expertiseSkills.length - 1 ? ',' : ''}`}</div>
         ))}

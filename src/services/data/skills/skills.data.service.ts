@@ -11,12 +11,12 @@ export enum Skill {
   GITHUB_ACTIONS = 'Github Actions',
   GITOPS = 'GitOps',
   GRAPHQL = 'GraphQL',
-  JS = 'Javascript',
+  JS = 'JavaScript',
   K8S = 'Kubernetes',
   NESTJS = 'NestJS',
   NODE = 'Node.js',
   NOSQL = 'NoSQL',
-  REST = 'REST',
+  REST = 'RESTful',
   RXJS = 'RXJS/NGXS/NgRx',
   POSTGRES = 'Postgres',
   STRIPE = 'Stripe',
@@ -39,7 +39,27 @@ export enum Skill {
   HUGO = 'HUGO',
   ANDROID = 'Android Native',
   ASP_NET = 'ASP.net',
-  SPRING_BOOT = 'Spring Boot'
+  MICRONAUT = 'Micronaut',
+  HTML = 'HTML',
+  CSS = 'CSS',
+  RESPONSIVE_DESIGN = 'Responsive design',
+  CROSS_BROWSER = 'Cross-Browser Compatibility',
+  GIT = 'Git',
+  CI_CD = 'CI/CD',
+  AGILE = 'Agile/Scrum',
+  UNIT_TEST = 'Unit Testing',
+  JASMINE = 'Jasmine',
+  KARMA = 'Karma',
+  SASS = 'SASS',
+  NPM = 'NPM',
+  PERFORMANCE = 'Performance Optimization',
+  ACCESSIBILITY = 'Accessibility (WCAG)',
+  REVIEWS = 'Code Reviews',
+  UX = 'UX/UI Best Practices',
+  ASYNC = 'Asynchronous Programming',
+  SEO = 'SEO Best Practices',
+  SECURITY = 'Web Security',
+  EXPO = 'Expo'
 }
 
 const SKILLS_EXPERTISE = [
@@ -68,6 +88,27 @@ const SKILLS_EXPERTISE = [
   Skill.TS,
   Skill.UNITY,
   Skill.HUGO,
+  Skill.HTML,
+  Skill.CSS,
+  Skill.RESPONSIVE_DESIGN,
+  Skill.CROSS_BROWSER,
+  Skill.GIT,
+  Skill.CI_CD,
+  Skill.AGILE,
+  Skill.UNIT_TEST,
+  Skill.JASMINE,
+  Skill.KARMA,
+  Skill.SASS,
+  Skill.NPM,
+  Skill.PERFORMANCE,
+  Skill.ACCESSIBILITY,
+  Skill.REVIEWS,
+  Skill.UX,
+  Skill.ASYNC,
+  Skill.SEO,
+  Skill.SECURITY,
+  Skill.REACT_NATIVE,
+  Skill.EXPO,
 ]
 
 const SKILLS_PERSONAL = [
@@ -78,8 +119,7 @@ const SKILLS_PERSONAL = [
   Skill.JAVA,
   Skill.KICAD,
   Skill.OPENSCAD,
-  Skill.REACT_NATIVE,
-  Skill.SPRING_BOOT,
+  Skill.MICRONAUT,
   Skill.ASP_NET,
   Skill.ANDROID,
   Skill.BLENDER,
@@ -126,9 +166,9 @@ export default class SkillsDataService {
     return language === 'en' ? SKILLS_PERSONAL_EN : SKILLS_PERSONAL_NL;
   }
   public getExpertiseSkills() {
-    return SKILLS_EXPERTISE;
+    return SKILLS_EXPERTISE.sort();
   }
   public getPersonalSkills() {
-    return SKILLS_PERSONAL;
+    return SKILLS_PERSONAL.sort();
   }
 }

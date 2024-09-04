@@ -15,7 +15,7 @@ export function ExpressMe(language: 'en' | 'nl'): Project {
     type: 'work',
     commitment: 'part_time',
     skills: [
-      Skill.ANDROID, Skill.JAVA, Skill.REACT_NATIVE, Skill.AWS, Skill.TS, Skill.RXJS, Skill.POSTGRES, Skill.GITHUB_ACTIONS, Skill.SPRING_BOOT
+      Skill.ANDROID, Skill.JAVA, Skill.REACT_NATIVE, Skill.AWS, Skill.TS, Skill.RXJS, Skill.POSTGRES, Skill.GITHUB_ACTIONS, Skill.MICRONAUT, Skill.EXPO
     ],
     description: language === 'en' ? DESCRIPTION_EN : DESCRIPTION_NL,
     shortDescription: language === 'en' ? DESCRIPTION_EN : DESCRIPTION_NL,
