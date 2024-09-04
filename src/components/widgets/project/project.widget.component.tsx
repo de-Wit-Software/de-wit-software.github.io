@@ -27,7 +27,7 @@ export default function ProjectItem(props: {
           </div>
         </div>
       </div>
-      <div className={(props.resume ? "mb-2 " : "mb-8 ") + "flex flex-col items-start xl:items-end opacity-40	"}>
+      <div className={(props.resume ? "mb-2 " : "mb-8 ") + "flex flex-col items-start xl:items-end opacity-60	"}>
         {!props.resume ? (
           <div className="flex flex-row">
             <div className="mr-2">{props.project.type === 'work' ? props.labels.projects.type.work : props.labels.projects.type.personalProject}</div>
@@ -42,7 +42,7 @@ export default function ProjectItem(props: {
         ) : (<></>)}
 
 
-        <div className="flex flex-row flex-wrap justify-start xl:justify-end text-xs">{props.project.skills.sort().map((skill, i) => (
+        <div className={(props.resume ? 'text-xs ' : 'text-base ') + "flex flex-row flex-wrap justify-start xl:justify-end"}>{props.project.skills.sort().map((skill, i) => (
           <div className="mr-4 ml-0 xl:ml-4 xl:mr-0" key={i}>{skill}{i !== props.project.skills.length - 1 ? ',' : ''}</div>
         ))}</div>
 
