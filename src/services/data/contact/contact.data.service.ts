@@ -11,13 +11,22 @@ export type ContactInfoItem = {
 }
 
 export default class ContactDataService {
+  public getEmail() {
+    return 'niek@dewitsoftware.nl'
+  };
+  public getLinkedIn() {
+    return 'linkedin.com/in/niekdewit/'
+  };
+  public getAddress(language: 'en' | 'nl') {
+    return language === 'en' ? ADDRESS_EN : ADDRESS_NL
+  };
   public getContactInfo(language: 'en' | 'nl', _labels: ContactInfoLabels): ContactInfoItem[] {
     return [
       {
         label: _labels.email,
-        value: 'niek@dewitsoftware.nl',
+        value: this.getEmail(),
         display: 'email',
-        displayData: 'niek@dewitsoftware.nl'
+        displayData: this.getEmail()
       },
       {
         label: _labels.github,
@@ -27,13 +36,13 @@ export default class ContactDataService {
       },
       {
         label: _labels.linkedIn,
-        value: 'linkedin.com/in/niekdewit/',
+        value: this.getLinkedIn(),
         display: 'href',
-        displayData: 'https://www.linkedin.com/in/niekdewit/'
+        displayData: 'https://www.'+this.getLinkedIn()
       },
       {
         label: _labels.address,
-        value: language === 'en' ? ADDRESS_EN : ADDRESS_NL,
+        value: this.getAddress(language),
         display: 'plain'
       },
       {

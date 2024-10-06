@@ -4,10 +4,13 @@ import ExternalUrlsDataService from "@/services/data/external_urls/external_urls
 import LabelsDataService, { Labels } from "@/services/data/labels/labels.data.service";
 import ProjectsDataService, { Project } from "@/services/data/projects/projects.data.service";
 import SkillsDataService, { Skill } from "@/services/data/skills/skills.data.service";
+import { ResumeType } from "@/types";
 
 export type AppState = {
   aboutMeText: string
-  aboutMeShortText: string
+  aboutMeShortText: {
+    [key in ResumeType]: string
+  }
   ctaText: string
   resumeTimeText: string,
   labels: Labels
@@ -15,10 +18,35 @@ export type AppState = {
   skillsEducationText: string,
   skillsExpertiseText: string,
   skillsPersonalText: string,
-  expertiseSkills: Skill[],
+  expertiseSkills: {
+    [key in ResumeType]: {
+      normal: Skill[],
+      highlighted: Skill[]
+    }
+  } & {
+    none: {
+      normal: Skill[],
+      highlighted: Skill[]
+    }
+  },
   personalSkills: Skill[],
   contactInfo: ContactInfoItem[],
-  projects: Project[],
+  email: string;
+  linkedIn: string;
+  address: string;
+  projects: {
+    [key in ResumeType]: {
+      highlighted?: Project,
+      page1: Project[],
+      page2: Project[]
+    }
+  } & {
+    none: {
+      highlighted?: Project,
+      page1: Project[],
+      page2: Project[]
+    }
+  },
   language: 'en' | 'nl'
 }
 
@@ -47,5 +75,8 @@ export default function CreateAppState(
     skillsPersonalText: _skillsDataService.getPersonalText(_language),
     expertiseSkills: _skillsDataService.getExpertiseSkills(),
     personalSkills: _skillsDataService.getPersonalSkills(),
+    email: _contactDataService.getEmail(),
+    linkedIn: _contactDataService.getLinkedIn(),
+    address: _contactDataService.getAddress(_language)
   }
 }

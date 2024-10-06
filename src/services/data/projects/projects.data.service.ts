@@ -1,3 +1,4 @@
+import { ResumeType } from "@/types";
 import { Skill } from "../skills/skills.data.service";
 import { Alliander } from "./project.alliander";
 import { Arcadable } from "./project.arcadable";
@@ -35,18 +36,62 @@ export type Project = {
 }
 
 export default class ProjectsDataService {
-  public getProjects(language: 'en' | 'nl'): Project[] {
-    return [
-      ExpressMe(language),
-      Motorcycle(language),
-      Alliander(language),
-      BuddyBall(language),
-      SyncVRMedical(language),
-      Arcadable(language),
-      Targomo(language),
-      SocialBrothers(language),
-      BricksAndGoggles(language),
-      Meditop(language),
-    ];
+  public getProjects(language: 'en' | 'nl') {
+    return {
+      [ResumeType.WEB]: {
+        highlighted: Alliander(language),
+        page1: [
+          ExpressMe(language),
+        ],
+        page2: [
+          SyncVRMedical(language),
+          Targomo(language),
+          SocialBrothers(language),
+          BricksAndGoggles(language),
+          Meditop(language),
+        ]
+      },      
+      [ResumeType.MOBILE]: {
+        highlighted: ExpressMe(language),
+        page1: [
+          Alliander(language),
+        ],
+        page2: [
+          SyncVRMedical(language),
+          Targomo(language),
+          SocialBrothers(language),
+          BricksAndGoggles(language),
+          Meditop(language),
+        ]
+      },  
+      [ResumeType.GAME]: {
+        highlighted: BuddyBall(language),
+        page1: [
+          ExpressMe(language),
+        ],
+        page2: [
+          Alliander(language),
+          SyncVRMedical(language),
+          Arcadable(language),
+          Targomo(language),
+          BricksAndGoggles(language),
+        ]
+      },
+      'none': {
+        highlighted: undefined,
+        page1: [
+          ExpressMe(language),
+          Motorcycle(language),
+          Alliander(language),
+          BuddyBall(language),
+          SyncVRMedical(language),
+          Arcadable(language),
+          Targomo(language),
+          SocialBrothers(language),
+          BricksAndGoggles(language),
+          Meditop(language),
+        ],
+      },
+    }
   }
 }

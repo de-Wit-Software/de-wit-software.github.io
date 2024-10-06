@@ -1,3 +1,4 @@
+import { ResumeType } from "@/types";
 
 export enum Skill {
   ANGULAR = 'Angular V2+',
@@ -109,12 +110,45 @@ const SKILLS_EXPERTISE = [
   Skill.SECURITY,
   Skill.REACT_NATIVE,
   Skill.EXPO,
+  Skill.C_SHARP,
 ]
+
+const SKILLS_HIGHLIGHTED = {
+  [ResumeType.WEB]: [
+    Skill.ANGULAR,
+    Skill.AWS,
+    Skill.GRAPHQL,
+    Skill.REST,
+    Skill.TS,
+    Skill.NODE,
+    Skill.CI_CD,
+    Skill.DOCKER,
+    Skill.K8S,
+  ],
+  [ResumeType.MOBILE]: [
+    Skill.REACT_NATIVE,
+    Skill.AWS,
+    Skill.GRAPHQL,
+    Skill.REST,
+    Skill.TS,
+    Skill.NODE,
+    Skill.CI_CD,
+    Skill.DOCKER,
+    Skill.K8S,
+  ],
+  [ResumeType.GAME]: [
+    Skill.UNITY,
+    Skill.AWS,
+    Skill.C_SHARP,
+    Skill.TS,
+    Skill.NODE,
+    Skill.CI_CD,
+  ]
+}
 
 const SKILLS_PERSONAL = [
   Skill.PRINTING_3D,
   Skill.ARDUINO,
-  Skill.C_SHARP,
   Skill.CPP,
   Skill.JAVA,
   Skill.KICAD,
@@ -135,8 +169,8 @@ Bachelor's degree, HBO-ICT
 Cum Laude (GPA 4.0)  
 Student identification number: 1641329`;
 
-const SKILLS_EXPERTISE_EN = `**Expertise; 1+ years of professional experience**  
-_In no particular order_`;
+const SKILLS_EXPERTISE_EN = `**1+ years of professional experience**  
+_Featured expertise **in bold** - In no particular order_`;
 
 const SKILLS_PERSONAL_EN = `**Other; Non-professional experience**  
 _In no particular order_`;
@@ -148,8 +182,8 @@ Bachelor, HBO-ICT
 Cum Laude (GPA 4.0)  
 Studentnummer: 1641329`;  
 
-const SKILLS_EXPERTISE_NL = `**Expertise; 1+ jaar professionele ervaring**  
-_Zonder specifieke volgorde_`;
+const SKILLS_EXPERTISE_NL = `**1+ jaar professionele ervaring**  
+_Uitgelichte expertise **dikgedrukt** - Zonder specifieke volgorde_`;
 
 const SKILLS_PERSONAL_NL = `**Overig; Niet-professionele ervaring**  
 _Zonder specifieke volgorde_`;
@@ -166,7 +200,25 @@ export default class SkillsDataService {
     return language === 'en' ? SKILLS_PERSONAL_EN : SKILLS_PERSONAL_NL;
   }
   public getExpertiseSkills() {
-    return SKILLS_EXPERTISE.sort();
+
+    return {
+      ['none']: {
+        highlighted: SKILLS_HIGHLIGHTED[ResumeType.WEB],
+        normal: SKILLS_EXPERTISE.sort().filter(skill => !SKILLS_HIGHLIGHTED[ResumeType.WEB].includes(skill))
+      },
+      [ResumeType.WEB]: {
+        highlighted: SKILLS_HIGHLIGHTED[ResumeType.WEB],
+        normal: SKILLS_EXPERTISE.sort().filter(skill => !SKILLS_HIGHLIGHTED[ResumeType.WEB].includes(skill))
+      },
+      [ResumeType.MOBILE]: {
+        highlighted: SKILLS_HIGHLIGHTED[ResumeType.MOBILE],
+        normal: SKILLS_EXPERTISE.sort().filter(skill => !SKILLS_HIGHLIGHTED[ResumeType.MOBILE].includes(skill))
+      },
+      [ResumeType.GAME]: {
+        highlighted: SKILLS_HIGHLIGHTED[ResumeType.GAME],
+        normal: SKILLS_EXPERTISE.sort().filter(skill => !SKILLS_HIGHLIGHTED[ResumeType.GAME].includes(skill))
+      },
+    };
   }
   public getPersonalSkills() {
     return SKILLS_PERSONAL.sort();

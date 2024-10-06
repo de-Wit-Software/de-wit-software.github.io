@@ -1,11 +1,12 @@
 import ContextWrapper from "@/app/context";
 import Resume from "@/components/features/resume/resume.feature.component";
+import { ResumeType } from "@/types";
 
 
 const Page = ContextWrapper(
-  'nl',
+  'en',
   (props: any) => {
-    return <Resume appState={props.appState}></Resume>
+    return <Resume type={ResumeType.WEB} appState={props.appState}></Resume>
   }
 );
 

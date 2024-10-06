@@ -49,11 +49,18 @@ export type Labels = {
   },
   downloads: {
     print: string,
-    download: string,
+    downloadWebNl: string,
+    downloadMobileNl: string,
+    downloadGameNl: string,
+    downloadWebEn: string,
+    downloadMobileEn: string,
+    downloadGameEn: string,
     source: string
   },
   contact: ContactInfoLabels,
   projects: {
+    highlighted: string,
+    other: string,
     recommendation: {
       letter: string,
       linkedin: string
@@ -124,7 +131,12 @@ const LABELS_EN: Labels = {
   },
   downloads: {
     print: 'Print my resume',
-    download: 'Download my resume (PDF)',
+    downloadWebEn: 'Resume - English - Full stack web development (PDF)',
+    downloadMobileEn: 'Resume - English - React Native mobile development (PDF)',
+    downloadGameEn: 'Resume - English - Unity game development (PDF)',
+    downloadWebNl: 'Resume - Dutch - Full stack web development (PDF)',
+    downloadMobileNl: 'Resume - Dutch - React Native mobile development (PDF)',
+    downloadGameNl: 'Resume - Dutch - Unity game development (PDF)',
     source: 'Source of this website'
   },
   contact: {
@@ -138,6 +150,8 @@ const LABELS_EN: Labels = {
     onRequest: 'On request'
   },
   projects: {
+    highlighted: 'Highlighted project',
+    other: 'Further professional experience',
     recommendation: {
       letter: 'Letter of recommendation',
       linkedin: 'LinkedIn recommendation'
@@ -201,7 +215,12 @@ const LABELS_NL: Labels = {
   },
   downloads: {
     print: 'Print mijn CV',
-    download: 'Download mijn CV (PDF)',
+    downloadWebEn: 'CV - Engels - Full stack web development (PDF)',
+    downloadMobileEn: 'CV - Engels - React Native mobile development (PDF)',
+    downloadGameEn: 'CV - Engels - Unity game development (PDF)',
+    downloadWebNl: 'CV - Nederlands - Full stack web development (PDF)',
+    downloadMobileNl: 'CV - Nederlands - React Native mobile development (PDF)',
+    downloadGameNl: 'CV - Nederlands - Unity game development (PDF)',
     source: 'Source van deze website'
   },
   contact: {
@@ -215,6 +234,8 @@ const LABELS_NL: Labels = {
     onRequest: 'Op verzoek'
   },
   projects: {
+    highlighted: 'Uitgelicht project',
+    other: 'Verdere professionele ervaring',
     recommendation: {
       letter: 'Aanbevelingsbrief',
       linkedin: 'LinkedIn aanbeveling'
