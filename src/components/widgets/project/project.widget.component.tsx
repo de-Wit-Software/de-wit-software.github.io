@@ -15,17 +15,24 @@ export default function ProjectItem(props: {
   return (
     
     <div>
-      <div>
+      <div className='flex flex-col'>
         <div className="flex flex-col md:flex-row justify-between w-full ">
-          <div className="flex flex-col font-bold">
-            <div>{props.project.function}</div>
-            <a className="text-portfolio-text" id={props.project.company}><div>{props.project.company}</div></a>
+          <div className="font-bold">
+            <div>{props.project.function || props.project.company}</div>
           </div>
           <div className="grow h-px bg-portfolio-text mt-3 mx-8 hidden md:block"></div>
           <div className="font-bold">
             {getTimeString(props.project.start, props.labels)} - {getTimeString(props.project.end, props.labels)}; {(props.resume && getTimeString(props.project.end, props.labels).includes(props.labels.date.now)) ? '' : workTime}
           </div>
         </div>
+        <a className="text-portfolio-text" id={props.project.company}>
+          <div className="flex flex-row">
+          {!!props.project.function ? <div className="font-bold mr-1">{props.project.company}</div> : null}
+          {!!props.resume && props.project.recommendations.length > 0 ? (
+            <div className="font-normal"> - {props.labels.projects.recommendationCount.replace('~COUNT~', `${props.project.recommendations.length}`)}</div>
+          ) : null}
+          </div>
+        </a>
       </div>
       <div className={(props.resume ? "mb-2 " : "mb-8 ") + "flex flex-col items-start xl:items-end opacity-60	"}>
         {!props.resume ? (
@@ -36,7 +43,7 @@ export default function ProjectItem(props: {
         ) : (<></>)}
         {!props.resume && props.project.type === 'work' ? (
           <div className="flex flex-row">
-            <div className="mr-2">{props.project.location}</div>
+            {props.project.location ? <div className="mr-2">{props.project.location}</div> : null}
             <div>({props.project.remote ? props.labels.projects.remote.remote : props.labels.projects.remote.onLocation})</div>
           </div>
         ) : (<></>)}

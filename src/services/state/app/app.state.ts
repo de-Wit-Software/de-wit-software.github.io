@@ -16,7 +16,9 @@ export type AppState = {
   labels: Labels
   githubSource: string
   skillsEducationText: string,
+  skillsShortEducationText: string,
   skillsExpertiseText: string,
+  skillsProfessionalText: string,
   skillsPersonalText: string,
   expertiseSkills: {
     [key in ResumeType]: {
@@ -36,13 +38,13 @@ export type AppState = {
   address: string;
   projects: {
     [key in ResumeType]: {
-      highlighted?: Project,
+      highlighted?: Project[],
       page1: Project[],
       page2: Project[]
     }
   } & {
     none: {
-      highlighted?: Project,
+      highlighted?: Project[],
       page1: Project[],
       page2: Project[]
     }
@@ -71,7 +73,9 @@ export default function CreateAppState(
     contactInfo: _contactDataService.getContactInfo(_language, labels.contact),
     projects: _projectDataService.getProjects(_language),
     skillsEducationText: _skillsDataService.getEducationText(_language),
+    skillsShortEducationText: _skillsDataService.getShortEducationText(_language),
     skillsExpertiseText: _skillsDataService.getExpertiseText(_language),
+    skillsProfessionalText: _skillsDataService.getProfessionalText(_language),
     skillsPersonalText: _skillsDataService.getPersonalText(_language),
     expertiseSkills: _skillsDataService.getExpertiseSkills(),
     personalSkills: _skillsDataService.getPersonalSkills(),

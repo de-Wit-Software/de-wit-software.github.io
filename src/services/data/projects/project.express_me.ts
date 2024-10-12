@@ -14,6 +14,7 @@ export function ExpressMe(language: 'en' | 'nl'): Project {
     end: new Date(),
     type: 'work',
     commitment: 'part_time',
+    remote: true,
     skills: [
       Skill.ANDROID, Skill.JAVA, Skill.REACT_NATIVE, Skill.AWS, Skill.TS, Skill.RXJS, Skill.POSTGRES, Skill.GITHUB_ACTIONS, Skill.MICRONAUT, Skill.EXPO
     ],

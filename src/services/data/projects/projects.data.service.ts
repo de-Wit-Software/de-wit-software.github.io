@@ -39,7 +39,9 @@ export default class ProjectsDataService {
   public getProjects(language: 'en' | 'nl') {
     return {
       [ResumeType.WEB]: {
-        highlighted: Alliander(language),
+        highlighted: [
+          Alliander(language)
+        ],
         page1: [
           ExpressMe(language),
         ],
@@ -52,7 +54,9 @@ export default class ProjectsDataService {
         ]
       },      
       [ResumeType.MOBILE]: {
-        highlighted: ExpressMe(language),
+        highlighted: [
+          ExpressMe(language)
+        ],
         page1: [
           Alliander(language),
         ],
@@ -65,14 +69,16 @@ export default class ProjectsDataService {
         ]
       },  
       [ResumeType.GAME]: {
-        highlighted: BuddyBall(language),
+        highlighted: [
+          BuddyBall(language),
+          Arcadable(language),
+        ],
         page1: [
-          ExpressMe(language),
         ],
         page2: [
+          ExpressMe(language),
           Alliander(language),
           SyncVRMedical(language),
-          Arcadable(language),
           Targomo(language),
           BricksAndGoggles(language),
         ]

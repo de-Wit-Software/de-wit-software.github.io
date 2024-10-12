@@ -169,11 +169,16 @@ Bachelor's degree, HBO-ICT
 Cum Laude (GPA 4.0)  
 Student identification number: 1641329`;
 
-const SKILLS_EXPERTISE_EN = `**1+ years of professional experience**  
-_Featured expertise **in bold** - In no particular order_`;
+const SKILLS_EDUCATION_SHORT_EN = `**Education**  
+HU University of Applied Sciences Utrecht - Bachelor's degree, HBO-ICT - 2014 - 2018  
+Cum Laude (GPA 4.0) - Student identification number: 1641329`;
 
-const SKILLS_PERSONAL_EN = `**Other; Non-professional experience**  
-_In no particular order_`;
+const SKILLS_EXPERTISE_EN = `**Highlighted expertise** - _In no particular order_`;
+
+const SKILLS_PROFESSIONAL_EN = `**Extensive professional experience** - _In no particular order_`;
+
+const SKILLS_PERSONAL_EN = `**Other non-professional experience** - _In no particular order_`;
+
 
 const SKILLS_EDUCATION_NL = `**Opleiding**  
 Hogeschool Utrecht  
@@ -182,19 +187,30 @@ Bachelor, HBO-ICT
 Cum Laude (GPA 4.0)  
 Studentnummer: 1641329`;  
 
-const SKILLS_EXPERTISE_NL = `**1+ jaar professionele ervaring**  
-_Uitgelichte expertise **dikgedrukt** - Zonder specifieke volgorde_`;
+const SKILLS_EDUCATION_SHORT_NL = `**Opleiding**  
+Hogeschool Utrecht - Bachelor, HBO-ICT - 2014 - 2018  
+Cum Laude (GPA 4.0) - Studentnummer: 1641329`;  
 
-const SKILLS_PERSONAL_NL = `**Overig; Niet-professionele ervaring**  
-_Zonder specifieke volgorde_`;
+
+const SKILLS_EXPERTISE_NL = `**Uitgelichte Expertise** - _Zonder specifieke volgorde_`;
+
+const SKILLS_PROFESSIONAL_NL = `**Ruime professionele ervaring** - _Zonder specifieke volgorde_`;
+
+const SKILLS_PERSONAL_NL = `**Overig niet-professionele ervaring** - _Zonder specifieke volgorde_`;
 
 
 export default class SkillsDataService {
   public getEducationText(language: 'en' | 'nl') {
     return language === 'en' ? SKILLS_EDUCATION_EN : SKILLS_EDUCATION_NL;
   }
+  public getShortEducationText(language: 'en' | 'nl') {
+    return language === 'en' ? SKILLS_EDUCATION_SHORT_EN : SKILLS_EDUCATION_SHORT_NL;
+  }
   public getExpertiseText(language: 'en' | 'nl') {
     return language === 'en' ? SKILLS_EXPERTISE_EN : SKILLS_EXPERTISE_NL;
+  }
+  public getProfessionalText(language: 'en' | 'nl') {
+    return language === 'en' ? SKILLS_PROFESSIONAL_EN : SKILLS_PROFESSIONAL_NL;
   }
   public getPersonalText(language: 'en' | 'nl') {
     return language === 'en' ? SKILLS_PERSONAL_EN : SKILLS_PERSONAL_NL;

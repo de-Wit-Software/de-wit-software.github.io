@@ -45,11 +45,13 @@ export default function Resume(props: {
 
       </div>
       <div className="">
-        <Skills appState={props.appState} resumeType={props.type} className="flex flex-row w-full"></Skills>
+        <Skills appState={props.appState} resumeType={props.type} className="flex w-full"></Skills>
 
       </div>
     </div>
-    <Projects appState={props.appState} resumeType={props.type}></Projects>
+    <Projects className=" mb-4" appState={props.appState} resumeType={props.type}></Projects>
+    <div className={'text-base sm:text-justify'}><MDXRemote source={props.appState.skillsShortEducationText} /></div>
+
   </div>
   
 }

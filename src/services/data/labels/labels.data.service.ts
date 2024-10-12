@@ -61,6 +61,7 @@ export type Labels = {
   projects: {
     highlighted: string,
     other: string,
+    recommendationCount: string,
     recommendation: {
       letter: string,
       linkedin: string
@@ -152,6 +153,7 @@ const LABELS_EN: Labels = {
   projects: {
     highlighted: 'Highlighted project',
     other: 'Further professional experience',
+    recommendationCount: '~COUNT~ recommendation(s), visible on dewitsoftware.nl',
     recommendation: {
       letter: 'Letter of recommendation',
       linkedin: 'LinkedIn recommendation'
@@ -236,6 +238,7 @@ const LABELS_NL: Labels = {
   projects: {
     highlighted: 'Uitgelicht project',
     other: 'Verdere professionele ervaring',
+    recommendationCount: '~COUNT~ aanbeveling(en), zichtbaar op dewitsoftware.nl',
     recommendation: {
       letter: 'Aanbevelingsbrief',
       linkedin: 'LinkedIn aanbeveling'
