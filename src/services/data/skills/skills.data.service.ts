@@ -60,7 +60,9 @@ export enum Skill {
   ASYNC = 'Asynchronous Programming',
   SEO = 'SEO Best Practices',
   SECURITY = 'Web Security',
-  EXPO = 'Expo'
+  EXPO = 'Expo',
+  NX = 'NX',
+  STORYBOOK = 'Storybook',
 }
 
 const SKILLS_EXPERTISE = [
@@ -111,6 +113,8 @@ const SKILLS_EXPERTISE = [
   Skill.REACT_NATIVE,
   Skill.EXPO,
   Skill.C_SHARP,
+  Skill.NX,
+  Skill.STORYBOOK,
 ]
 
 const SKILLS_HIGHLIGHTED = {
@@ -124,6 +128,8 @@ const SKILLS_HIGHLIGHTED = {
     Skill.CI_CD,
     Skill.DOCKER,
     Skill.K8S,
+    Skill.RXJS,
+    Skill.NX
   ],
   [ResumeType.MOBILE]: [
     Skill.REACT_NATIVE,
@@ -219,19 +225,19 @@ export default class SkillsDataService {
 
     return {
       ['none']: {
-        highlighted: SKILLS_HIGHLIGHTED[ResumeType.WEB],
+        highlighted: SKILLS_HIGHLIGHTED[ResumeType.WEB].sort(),
         normal: SKILLS_EXPERTISE.sort().filter(skill => !SKILLS_HIGHLIGHTED[ResumeType.WEB].includes(skill))
       },
       [ResumeType.WEB]: {
-        highlighted: SKILLS_HIGHLIGHTED[ResumeType.WEB],
+        highlighted: SKILLS_HIGHLIGHTED[ResumeType.WEB].sort(),
         normal: SKILLS_EXPERTISE.sort().filter(skill => !SKILLS_HIGHLIGHTED[ResumeType.WEB].includes(skill))
       },
       [ResumeType.MOBILE]: {
-        highlighted: SKILLS_HIGHLIGHTED[ResumeType.MOBILE],
+        highlighted: SKILLS_HIGHLIGHTED[ResumeType.MOBILE].sort(),
         normal: SKILLS_EXPERTISE.sort().filter(skill => !SKILLS_HIGHLIGHTED[ResumeType.MOBILE].includes(skill))
       },
       [ResumeType.GAME]: {
-        highlighted: SKILLS_HIGHLIGHTED[ResumeType.GAME],
+        highlighted: SKILLS_HIGHLIGHTED[ResumeType.GAME].sort(),
         normal: SKILLS_EXPERTISE.sort().filter(skill => !SKILLS_HIGHLIGHTED[ResumeType.GAME].includes(skill))
       },
     };
