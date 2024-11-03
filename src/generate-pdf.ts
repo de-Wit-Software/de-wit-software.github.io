@@ -7,7 +7,7 @@ const exiftool = require('node-exiftool')
 const exiftoolBin = require('dist-exiftool')
 const ep = new exiftool.ExiftoolProcess(exiftoolBin)
 const skillsService = new SkillsDataService();
-const generate = async function(lang: 'en' | 'nl', type: ResumeType) {
+const generateResume = async function(lang: 'en' | 'nl', type: ResumeType) {
   let content = fs.readFileSync(
       path.resolve(__dirname, '../docs/' + lang + '/' + type + '.html'),
       'utf-8'
@@ -74,15 +74,71 @@ const generate = async function(lang: 'en' | 'nl', type: ResumeType) {
   });
 
 }
+
+const generateTermsAndConditions = async function(lang: 'en' | 'nl') {
+  let content = fs.readFileSync(
+      path.resolve(__dirname, '../docs/' + lang + '/terms-and-conditions-pdf-render.html'),
+      'utf-8'
+  )
+  const browser = await puppeteer.launch({ headless: true })
+  const page = await browser.newPage()
+
+  const cssDir = path.resolve(__dirname, '../docs/_next/static/css');
+  const cssFile = cssDir + '/' + fs.readdirSync(cssDir)[0];
+  page.addStyleTag({path: cssFile});
+
+  await page.setContent(content)
+  
+  const buffer = await page.pdf({
+      format: 'A4',
+      printBackground: true,
+      margin: {
+        top: '80px',
+        bottom: '80px',
+        left: '80px',
+        right: '80px'
+      }
+  })
+
+  await browser.close()
+
+  
+  const filename = `docs/dewitsoftware-terms-and-conditions-${lang}.pdf`;
+  fs.writeFile(filename, buffer, (err) => {
+    if (err) throw err;
+    console.log("The file " +filename+ " has been saved!");
+
+    const data = {
+      Title: 'de Wit Software - Terms and Conditions - ' + lang,
+      Author: 'Name: Niek de Wit - Mail (preferred method of communication): niek@dewitsoftware.nl - Phone/Whatsapp: +31610566371',
+      'Subject+': 'Terms and Conditions for dewitsoftware.nl',
+      Creator: 'dewitsoftware.nl',
+      Producer: 'de Wit Software - Portfolio Generator',
+      Language: lang
+    }
+
+    ep
+      .open()
+      // read and write metadata operations
+      .then(() => ep.writeMetadata(filename, data, ['overwrite_original']))
+      .then(() => ep.readMetadata(filename, ['-File:all']))
+      .then(() => ep.close())
+      .then(() => console.log('Closed exiftool'))
+      .catch(console.error)
+  });
+
+}
 const timeout = setTimeout(
   () => {}, 60000
 );
 (async () => {
-  await generate('en', ResumeType.WEB);
-  await generate('en', ResumeType.MOBILE);
-  await generate('en', ResumeType.GAME);
-  await generate('nl', ResumeType.WEB);
-  await generate('nl', ResumeType.MOBILE);
-  await generate('nl', ResumeType.GAME);
+  await generateResume('en', ResumeType.WEB);
+  await generateResume('en', ResumeType.MOBILE);
+  await generateResume('en', ResumeType.GAME);
+  await generateResume('nl', ResumeType.WEB);
+  await generateResume('nl', ResumeType.MOBILE);
+  await generateResume('nl', ResumeType.GAME);
+  await generateTermsAndConditions('en');
+  await generateTermsAndConditions('nl');
   timeout.unref();
 })();

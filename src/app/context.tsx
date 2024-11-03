@@ -2,6 +2,7 @@ import AboutDataService from "@/services/data/about/about.data.service";
 import ContactDataService from "@/services/data/contact/contact.data.service";
 import ExternalUrlsDataService from "@/services/data/external_urls/external_urls.data.service";
 import LabelsDataService from "@/services/data/labels/labels.data.service";
+import LegalDataService from "@/services/data/legal/terms-and-conditions";
 import ProjectsDataService from "@/services/data/projects/projects.data.service";
 import SkillsDataService from "@/services/data/skills/skills.data.service";
 import CreateAppState, { AppState } from "@/services/state/app/app.state";
@@ -25,7 +26,8 @@ export default function ContextWrapper(
         new ExternalUrlsDataService(),
         new SkillsDataService(),
         new ContactDataService(),
-        new ProjectsDataService()
+        new ProjectsDataService(),
+        new LegalDataService()
       )
     }
     return functionComponent(props, ref);

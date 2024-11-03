@@ -2,6 +2,7 @@ import AboutDataService from "@/services/data/about/about.data.service"
 import ContactDataService, { ContactInfoItem } from "@/services/data/contact/contact.data.service";
 import ExternalUrlsDataService from "@/services/data/external_urls/external_urls.data.service";
 import LabelsDataService, { Labels } from "@/services/data/labels/labels.data.service";
+import LegalDataService from "@/services/data/legal/terms-and-conditions";
 import ProjectsDataService, { Project } from "@/services/data/projects/projects.data.service";
 import SkillsDataService, { Skill } from "@/services/data/skills/skills.data.service";
 import { ResumeType } from "@/types";
@@ -49,6 +50,7 @@ export type AppState = {
       page2: Project[]
     }
   },
+  termsAndConditions: string,
   language: 'en' | 'nl'
 }
 
@@ -59,7 +61,8 @@ export default function CreateAppState(
   _externalUrlsService: ExternalUrlsDataService,
   _skillsDataService: SkillsDataService,
   _contactDataService: ContactDataService,
-  _projectDataService: ProjectsDataService
+  _projectDataService: ProjectsDataService,
+  _legalDataService: LegalDataService,
 ) {
   const labels = _labelsDataService.getLabels(_language);
   return {
@@ -81,6 +84,7 @@ export default function CreateAppState(
     personalSkills: _skillsDataService.getPersonalSkills(),
     email: _contactDataService.getEmail(),
     linkedIn: _contactDataService.getLinkedIn(),
-    address: _contactDataService.getAddress(_language)
+    address: _contactDataService.getAddress(_language),
+    termsAndConditions: _legalDataService.getTermsAndConditions(_language),
   }
 }

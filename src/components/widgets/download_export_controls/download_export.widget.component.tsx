@@ -19,6 +19,8 @@ export default function DownloadExportControls(props: {
   const pdfWebNl = `/dewitsoftware-${ResumeType.WEB}-nl.pdf`;
   const pdfMobileNl = `/dewitsoftware-${ResumeType.MOBILE}-nl.pdf`;
   const pdfGameNl = `/dewitsoftware-${ResumeType.GAME}-nl.pdf`;
+  const termsAndConditionsNl = `/dewitsoftware-terms-and-conditions-nl.pdf`;
+  const termsAndConditionsEn = `/dewitsoftware-terms-and-conditions-en.pdf`;
 
   return <div>
     <Button className="block mb-4" text={props.labels.downloads.downloadWebEn} icon={FaFilePdf} download={pdfWebEn}></Button>
@@ -27,6 +29,8 @@ export default function DownloadExportControls(props: {
     <Button className="block mb-4" text={props.labels.downloads.downloadWebNl} icon={FaFilePdf} download={pdfWebNl}></Button>
     <Button className="block mb-4" text={props.labels.downloads.downloadMobileNl} icon={FaFilePdf} download={pdfMobileNl}></Button>
     <Button className="block mb-4" text={props.labels.downloads.downloadGameNl} icon={FaFilePdf} download={pdfGameNl}></Button>
+    <Button className="block mb-4" text={props.labels.downloads.downloadTermsAndConditionsNl} icon={FaFilePdf} download={termsAndConditionsNl}></Button>
+    <Button className="block mb-4" text={props.labels.downloads.downloadTermsAndConditionsEn} icon={FaFilePdf} download={termsAndConditionsEn}></Button>
     <Button text={props.labels.downloads.source} icon={FaGithub} href={props.githubSource}></Button>
   </div>
   

@@ -55,6 +55,8 @@ export type Labels = {
     downloadWebEn: string,
     downloadMobileEn: string,
     downloadGameEn: string,
+    downloadTermsAndConditionsNl: string,
+    downloadTermsAndConditionsEn: string,
     source: string
   },
   contact: ContactInfoLabels,
@@ -80,6 +82,11 @@ export type Labels = {
       onLocation: string
     },
   },
+  footer: {
+    termsAndConditions: string,
+    text: string,
+    textAdditional: string,
+  }
   and: string,
 };
 
@@ -138,6 +145,8 @@ const LABELS_EN: Labels = {
     downloadWebNl: 'Resume - Dutch - Full stack web development (PDF)',
     downloadMobileNl: 'Resume - Dutch - React Native mobile development (PDF)',
     downloadGameNl: 'Resume - Dutch - Unity game development (PDF)',
+    downloadTermsAndConditionsNl: 'General Terms and Conditions - Dutch (PDF)',
+    downloadTermsAndConditionsEn: 'General Terms and Conditions - English (PDF)',
     source: 'Source of this website'
   },
   contact: {
@@ -171,6 +180,11 @@ const LABELS_EN: Labels = {
       remote: 'Remote',
       onLocation: 'On-location'
     },
+  },
+  footer: {
+    text: '© ~YEAR~ de Wit Software -',
+    textAdditional: 'Freelance full-stack development -',
+    termsAndConditions: 'Terms & Conditions'
   },
   and: 'and',
 };
@@ -223,6 +237,8 @@ const LABELS_NL: Labels = {
     downloadWebNl: 'CV - Nederlands - Full stack web development (PDF)',
     downloadMobileNl: 'CV - Nederlands - React Native mobile development (PDF)',
     downloadGameNl: 'CV - Nederlands - Unity game development (PDF)',
+    downloadTermsAndConditionsNl: 'Algemene voorwaarden - Nederlands (PDF)',
+    downloadTermsAndConditionsEn: 'Algemene voorwaarden - Engels (PDF)',
     source: 'Source van deze website'
   },
   contact: {
@@ -256,6 +272,11 @@ const LABELS_NL: Labels = {
       remote: 'Remote',
       onLocation: 'Op locatie'
     },
+  },
+  footer: {
+    text: '© ~YEAR~ de Wit Software -',
+    textAdditional: 'Freelance full-stack development -',
+    termsAndConditions: 'Algemene voorwaarden'
   },
   and: 'en',
 };
