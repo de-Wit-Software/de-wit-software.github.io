@@ -145,12 +145,7 @@ Verder kan opdrachtnemer in het kader van de opdracht de volgende persoonsgegeve
 ## 18. Wijziging voorwaarden
 
 1. Opdrachtnemer behoudt zich het recht voor deze voorwaarden te wijzigen of aan te vullen.
-2. Wijzigingen gelden ook ten aanzien van reeds gesloten Overeenkomsten met inachtneming van een termijn van 30 dagen na bekendmaking van de wijziging.
-
-## 19. Slotbepaling
-
-1. Deze voorwaarden zijn gedeponeerd bij de Kamer van Koophandel onder nummer 94525447.
-2. Van toepassing is steeds de laatst gedeponeerde versie c.q. de versie zoals die gold ten tijde van het tot stand komen van de rechtsbetrekking met Opdrachtnemer.`;
+2. Wijzigingen gelden ook ten aanzien van reeds gesloten Overeenkomsten met inachtneming van een termijn van 30 dagen na bekendmaking van de wijziging.`;
 
 
 const TERMS_AND_CONDITIONS_EN = `# General Terms and Conditions
@@ -300,12 +295,7 @@ Furthermore, Contractor may process the following personal data of Client's empl
 ## 18. Amendment of Terms
 
 1. Contractor reserves the right to modify or supplement these terms.
-2. Modifications also apply to already concluded Agreements with observance of a period of 30 days after announcement of the modification.
-
-## 19. Final Provision
-
-1. These terms are filed with the Chamber of Commerce under number 94525447.
-2. The most recently filed version or the version that applied at the time of establishing the legal relationship with Contractor always applies.`;
+2. Modifications also apply to already concluded Agreements with observance of a period of 30 days after announcement of the modification.`;
 
 export default class LegalDataService {
   public getTermsAndConditions(language: 'en' | 'nl') {
